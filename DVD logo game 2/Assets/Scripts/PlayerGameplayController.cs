@@ -22,6 +22,10 @@ public class PlayerGameplayController : MonoBehaviour
     // Array of sprite renderers to flash
     public SpriteRenderer[] spriteRenderers;
 
+    public AudioSource sfxSource;
+
+    public AudioClip footstepClip, attackClip, hitClip, deathClip;
+
     // Boolean to track if the player is currently in the hit state
     private bool isHit, isDying;
 
@@ -70,6 +74,8 @@ public class PlayerGameplayController : MonoBehaviour
 
     void TakeDamage()
     {
+        sfxSource.PlayOneShot(hitClip);
+
         health -= 1;
 
         abdomenController.ChangeSprite(health - 1);
@@ -129,6 +135,8 @@ public class PlayerGameplayController : MonoBehaviour
 
         legsRotateToFaceMouse.canRotate = false;
 
+        sfxSource.PlayOneShot(deathClip);
+
         playerMovement.legsAnimator.SetTrigger("doDeath");
         animator.SetTrigger("doDeath");
     }
@@ -136,5 +144,11 @@ public class PlayerGameplayController : MonoBehaviour
     public void ShowDeathScreen()
     {
         deathScreen.enabled = true;
+    }
+
+
+    public void PlayAttackSFX()
+    {
+        sfxSource.PlayOneShot(attackClip);
     }
 }
