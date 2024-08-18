@@ -24,7 +24,11 @@ public class PlayerGameplayController : MonoBehaviour
 
     public AudioSource sfxSource;
 
-    public AudioClip footstepClip, attackClip, hitClip, deathClip;
+    public AudioClip attackClip, hitClip, deathClip;
+
+    public SpriteRenderer cursorRenderer;
+
+    public Sprite cursor1, cursor2, cursor3;
 
     // Boolean to track if the player is currently in the hit state
     private bool isHit, isDying;
@@ -150,5 +154,20 @@ public class PlayerGameplayController : MonoBehaviour
     public void PlayAttackSFX()
     {
         sfxSource.PlayOneShot(attackClip);
+    }
+
+    public void SetCursor1()
+    {
+        cursorRenderer.sprite = cursor1;
+    }
+
+    public void SetCursor2()
+    {
+        cursorRenderer.sprite = cursor2;
+    }
+
+    public void SetCursor3()
+    {
+        cursorRenderer.sprite = cursor3;
     }
 }

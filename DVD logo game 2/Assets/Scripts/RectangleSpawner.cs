@@ -15,6 +15,8 @@ public class RectangleSpawner : MonoBehaviour
 
     public UIManager uImanager;
 
+    public AudioManager audioManager;
+
     public void SpawnLogos(int amountToSpawn = 2)
     {
         StartCoroutine(SpawnLogosCoroutine(amountToSpawn));
@@ -47,6 +49,7 @@ public class RectangleSpawner : MonoBehaviour
             logoMovement.firstBorderHit = hasHitFirstBorder;
             logoMovement.canCollideWithNonBorder = hasHitFirstBorder;
             logoMovement.uImanager = uImanager;
+            logoMovement.audioManager = audioManager;
         }
     }
 

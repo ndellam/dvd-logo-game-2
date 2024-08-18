@@ -127,6 +127,11 @@ MonoBehaviour:
   sizeTier: 2
   canCollideWithNonBorder: 0
   uImanager: {fileID: 0}
+  warningObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
+  combineClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
+  resetComboClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
 --- !u!212 &1658659864624989591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -165,8 +170,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1463522151
-  m_SortingLayer: 3
+  m_SortingLayerID: 1258748047
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1136317321, guid: 30d4fe09e4323a140b738ca6932b865c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

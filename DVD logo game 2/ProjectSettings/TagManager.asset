@@ -44,3 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Menu
+    uniqueID: 1513411869
+    locked: 0
+  - name: BG
+    uniqueID: 2443241719
+    locked: 0
+  - name: Logo
+    uniqueID: 1258748047
+    locked: 0
+  - name: Player
+    uniqueID: 3944293583
+    locked: 0
+  - name: Attack
+    uniqueID: 821942213
+    locked: 0
+  - name: Cursor
+    uniqueID: 2576485893
+    locked: 0

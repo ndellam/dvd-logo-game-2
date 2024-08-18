@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator, legsAnimator;
 
+    public Transform cursor;
+
     void Start()
     {
         // Initialize lastPosition with the current position
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         // Get the mouse position in world coordinates
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0f; // Ensure z is 0 since this is 2D
+
+        cursor.position = mousePosition;
 
         if (canMove)
         {

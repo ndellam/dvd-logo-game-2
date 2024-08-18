@@ -19,6 +19,10 @@ public class DVDLogoMovement : MonoBehaviour
 
     bool hasBeenHitByPlayer;
 
+    public AudioManager audioManager;
+
+    public AudioClip hitClip, combineClip, resetComboClip;
+
     // Method to set the movement direction from external scripts
     public void SetDirection(Vector2 direction)
     {
@@ -59,8 +63,10 @@ public class DVDLogoMovement : MonoBehaviour
                             rectangleSpawner.SpawnLogos(1);
                         }
                         uImanager.UpdateCombo();
-                            Debug.Log("AddingScore");
-                            uImanager.AddScore(sizeTier);
+                        uImanager.AddScore(sizeTier);
+
+                        audioManager.PlayClipAscendingPitchByCombo(combineClip);
+
                         hasSpawned = true; // Mark that spawning has occurred
                     }
 
@@ -99,6 +105,8 @@ public class DVDLogoMovement : MonoBehaviour
 
                 if (hasBeenHitByPlayer)
                 {
+                    audioManager.PlayClip(resetComboClip);
+
                     uImanager.ResetCombo();
                 }
 
@@ -147,7 +155,9 @@ public class DVDLogoMovement : MonoBehaviour
                 currentSpeed = 5f;
 
                 hasBeenHitByPlayer = true;
-                
+
+                audioManager.PlayClip(hitClip);
+
             }
         }
 
