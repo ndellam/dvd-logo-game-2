@@ -53,6 +53,9 @@ TagManager:
   - name: Logo
     uniqueID: 1258748047
     locked: 0
+  - name: ComboText
+    uniqueID: 458475461
+    locked: 0
   - name: Player
     uniqueID: 3944293583
     locked: 0

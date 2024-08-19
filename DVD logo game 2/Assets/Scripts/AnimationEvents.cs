@@ -11,4 +11,9 @@ public class AnimationEvents : MonoBehaviour
     {
         footstepSource.PlayOneShot(footstepClip);
     }
+
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
 }

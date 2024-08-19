@@ -65,6 +65,9 @@ public class DVDLogoMovement : MonoBehaviour
                         uImanager.UpdateCombo();
                         uImanager.AddScore(sizeTier);
 
+
+                        rectangleSpawner.SpawnComboText(collision.contacts[0].point);
+
                         audioManager.PlayClipAscendingPitchByCombo(combineClip);
 
                         hasSpawned = true; // Mark that spawning has occurred
@@ -148,9 +151,13 @@ public class DVDLogoMovement : MonoBehaviour
 
                 Vector2 directionFromParent = (transform.position - collision.transform.parent.position).normalized;
 
+                //Vector2 directionTowardsCursor = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+
 
                 // Set the moveDirection to this new direction
                 moveDirection = directionFromParent;
+
+                //moveDirection = directionTowardsCursor;
 
                 currentSpeed = 5f;
 

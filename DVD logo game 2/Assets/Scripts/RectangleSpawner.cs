@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RectangleSpawner : MonoBehaviour
@@ -16,6 +17,10 @@ public class RectangleSpawner : MonoBehaviour
     public UIManager uImanager;
 
     public AudioManager audioManager;
+
+    public Canvas comboTextsCanvas;
+
+    public GameObject comboTextObject;
 
     public void SpawnLogos(int amountToSpawn = 2)
     {
@@ -107,5 +112,22 @@ public class RectangleSpawner : MonoBehaviour
     private void DrawValidSpawnLine(Vector2 start, Vector2 end)
     {
         Gizmos.DrawLine(start, end);
+    }
+
+    public void SpawnComboText(Vector3 worldCollisionPoint)
+    {
+        // Convert world position to screen position
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldCollisionPoint);
+
+        // Convert screen position to canvas position
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(comboTextsCanvas.GetComponent<RectTransform>(), screenPosition, comboTextsCanvas.worldCamera, out Vector2 canvasPosition);
+
+        // Instantiate the comboTextObject in the canvas
+        GameObject newComboText = Instantiate(comboTextObject, comboTextsCanvas.transform);
+
+        // Set the position of the RectTransform of the new ComboText object
+        newComboText.GetComponent<RectTransform>().anchoredPosition = canvasPosition;
+
+        newComboText.GetComponent<TMP_Text>().text = "X" + uImanager.combo.ToString();
     }
 }

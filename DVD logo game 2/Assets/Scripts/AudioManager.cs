@@ -20,7 +20,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayClipAscendingPitchByCombo(AudioClip clip)
     {
-        audioSource.pitch = 1 + (Mathf.Clamp(uiManger.combo, 1, 10) / 10);
+        int maxComboForPitchAscension = 10, pitchClamp = 5;
+        audioSource.pitch = 1 + (Mathf.Clamp(uiManger.combo, 1, maxComboForPitchAscension) / pitchClamp);
         audioSource.PlayOneShot(clip);
     }
 }

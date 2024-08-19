@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform cursor;
 
+    public float animationMovementSpeedDampanerWhenAttack = 1f;
+
     void Start()
     {
         // Initialize lastPosition with the current position
@@ -34,9 +36,23 @@ public class PlayerMovement : MonoBehaviour
 
         cursor.position = mousePosition;
 
+        // Convert the object's position to viewport space (0 to 1)
+        Vector3 viewportPosition = Camera.main.WorldToViewportPoint(cursor.position);
+
+        // Clamp the viewport position to keep the object within the view
+        viewportPosition.x = Mathf.Clamp(viewportPosition.x, 0.035f, 0.965f);
+        viewportPosition.y = Mathf.Clamp(viewportPosition.y, 0.05f, 0.95f);
+
+        // Convert the clamped viewport position back to world space
+        Vector3 clampedWorldPosition = Camera.main.ViewportToWorldPoint(viewportPosition);
+
+        cursor.position = clampedWorldPosition;
+
+        //Debug.Log("Mouse point: " + Input.mousePosition + " screen to world point: " + mousePosition);
+
         if (canMove)
         {
-            transform.position = Vector3.Lerp(transform.position, mousePosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, cursor.position, moveSpeed * Time.deltaTime * animationMovementSpeedDampanerWhenAttack);
         }
 
         // Calculate the direction vector from the object to the mouse position
