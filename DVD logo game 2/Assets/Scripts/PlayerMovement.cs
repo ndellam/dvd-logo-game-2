@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             transform.position = Vector3.Lerp(transform.position, cursor.position, moveSpeed * Time.deltaTime * animationMovementSpeedDampanerWhenAttack);
+            //transform.position = Vector3.MoveTowards(transform.position, mousePosition, moveSpeed * Time.deltaTime * 2.5f);
         }
 
         // Calculate the direction vector from the object to the mouse position
