@@ -159,21 +159,25 @@ public class PlayerGameplayController : MonoBehaviour
     public void SetCursor1()
     {
         //cursorRenderer.sprite = cursor1;
+        cursorRenderer.sprite = cursor1;
     }
 
     public void SetCursor2() //attacks
     {
         //sets alpha of renderer to 1
-        Color color = cursorRenderer.color;
-        color.a = 1f;
-        cursorRenderer.color = color;
+        //Color color = cursorRenderer.color;
+        //color.a = 1f;
+        //cursorRenderer.color = color;
+        cursorRenderer.sprite = cursor2;
     }
 
     public void SetCursor3()//hass attacked
     {
         //sets alpha of renderer to 0.6
-        Color color = cursorRenderer.color;
-        color.a = 0.6f;
-        cursorRenderer.color = color;
+        //Color color = cursorRenderer.color;
+        //color.a = 0.6f;
+        //cursorRenderer.color = color;
+        cursorRenderer.sprite = cursor3;
+
     }
 }

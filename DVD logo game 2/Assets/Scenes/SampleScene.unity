@@ -610,7 +610,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -350673713
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: -1562158501, guid: 2a94b9a45cc3b6b44b53b526d6ee2a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -763,9 +763,9 @@ MonoBehaviour:
   hitClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
   deathClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
   cursorRenderer: {fileID: 1677375782}
-  cursor1: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  cursor2: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  cursor3: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  cursor1: {fileID: 21300000, guid: 5f59b8445b2075b458cb59248c5e6edd, type: 3}
+  cursor2: {fileID: 21300000, guid: 5b74daac34bda3841ad8f1bdbce06e48, type: 3}
+  cursor3: {fileID: 21300000, guid: 8ca5c667fd87b8c46afb2d191bcfa598, type: 3}
 --- !u!95 &543678762
 Animator:
   serializedVersion: 5
@@ -2728,7 +2728,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -350673713
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 1637560567, guid: 2a94b9a45cc3b6b44b53b526d6ee2a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3404,10 +3404,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1718481403
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.6}
+  m_Sprite: {fileID: 21300000, guid: 5f59b8445b2075b458cb59248c5e6edd, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3427,7 +3427,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.10667, y: 0.51904, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -3787,7 +3787,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -350673713
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1699175093, guid: 2a94b9a45cc3b6b44b53b526d6ee2a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3855,7 +3855,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 104
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4364,7 +4364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 821942213
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4409,7 +4409,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11634812, y: 0.010037422}
+  m_Offset: {x: -0.11634812, y: 0.13447833}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4420,7 +4420,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7833461, y: 0.46763325}
+  m_Size: {x: 0.7833461, y: 0.71651506}
   m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

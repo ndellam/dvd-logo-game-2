@@ -108,8 +108,10 @@ public class DVDLogoMovement : MonoBehaviour
 
                 if (hasBeenHitByPlayer)
                 {
-                    audioManager.PlayClip(resetComboClip);
-
+                    if (uImanager.combo > 1)
+                    {
+                        audioManager.PlayClip(resetComboClip);
+                    }
                     uImanager.ResetCombo();
                 }
 

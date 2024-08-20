@@ -56,6 +56,9 @@ TagManager:
   - name: ComboText
     uniqueID: 458475461
     locked: 0
+  - name: Body parts
+    uniqueID: 1315138987
+    locked: 0
   - name: Player
     uniqueID: 3944293583
     locked: 0
