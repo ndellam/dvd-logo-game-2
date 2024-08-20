@@ -129,9 +129,13 @@ MonoBehaviour:
   uImanager: {fileID: 0}
   warningObject: {fileID: 0}
   audioManager: {fileID: 0}
-  hitClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
-  combineClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
-  resetComboClip: {fileID: 8300000, guid: 1a4e2e151fec6ae4da05431251b053da, type: 3}
+  hitClip: {fileID: 8300000, guid: d88ee694196b72e42971ddfcb695f653, type: 3}
+  resetComboClip: {fileID: 8300000, guid: 00f46b77cabb02c40ad4c8ae42e41f92, type: 3}
+  combineClip:
+  - {fileID: 8300000, guid: bdb048e010da10048bfa2290501fab4a, type: 3}
+  - {fileID: 8300000, guid: 449ed13e24ae7ce49830091f2280b2d4, type: 3}
+  - {fileID: 8300000, guid: dcde1b6d9878ae842b3ae409977424be, type: 3}
+  - {fileID: 8300000, guid: 093e7a842fb18534da09c15733532021, type: 3}
 --- !u!212 &4732323287631434219
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1258748047
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2057349290, guid: 30d4fe09e4323a140b738ca6932b865c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

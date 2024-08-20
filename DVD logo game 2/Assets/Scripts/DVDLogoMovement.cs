@@ -21,7 +21,8 @@ public class DVDLogoMovement : MonoBehaviour
 
     public AudioManager audioManager;
 
-    public AudioClip hitClip, combineClip, resetComboClip;
+    public AudioClip hitClip, resetComboClip;
+    public AudioClip[] combineClip;
 
     // Method to set the movement direction from external scripts
     public void SetDirection(Vector2 direction)
@@ -68,7 +69,7 @@ public class DVDLogoMovement : MonoBehaviour
 
                         rectangleSpawner.SpawnComboText(collision.contacts[0].point);
 
-                        audioManager.PlayClipAscendingPitchByCombo(combineClip);
+                        audioManager.PlayClipAscendingPitchByCombo(combineClip[Random.Range(0, combineClip.Count())]);
 
                         hasSpawned = true; // Mark that spawning has occurred
                     }

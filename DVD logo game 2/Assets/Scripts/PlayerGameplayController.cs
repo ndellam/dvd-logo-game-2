@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerGameplayController : MonoBehaviour
@@ -24,11 +25,15 @@ public class PlayerGameplayController : MonoBehaviour
 
     public AudioSource sfxSource;
 
-    public AudioClip attackClip, hitClip, deathClip;
+    public AudioClip deathClip;
+    public AudioClip[] attackClip, hitClip;
+
 
     public SpriteRenderer cursorRenderer;
 
     public Sprite cursor1, cursor2, cursor3;
+
+    public AudioManager audioManager;
 
     // Boolean to track if the player is currently in the hit state
     private bool isHit, isDying;
@@ -59,6 +64,8 @@ public class PlayerGameplayController : MonoBehaviour
 
     IEnumerator PauseAndTakeDamage()
     {
+        sfxSource.PlayOneShot(hitClip[Random.Range(0, hitClip.Count())]);
+
         // Pause time
         Time.timeScale = 0f;
         yield return new WaitForSecondsRealtime(timePauseDuration);
@@ -78,7 +85,6 @@ public class PlayerGameplayController : MonoBehaviour
 
     void TakeDamage()
     {
-        sfxSource.PlayOneShot(hitClip);
 
         health -= 1;
 
@@ -139,7 +145,9 @@ public class PlayerGameplayController : MonoBehaviour
 
         legsRotateToFaceMouse.canRotate = false;
 
-        sfxSource.PlayOneShot(deathClip);
+        
+
+        audioManager.musicSource.Stop();
 
         playerMovement.legsAnimator.SetTrigger("doDeath");
         animator.SetTrigger("doDeath");
@@ -153,7 +161,12 @@ public class PlayerGameplayController : MonoBehaviour
 
     public void PlayAttackSFX()
     {
-        sfxSource.PlayOneShot(attackClip);
+        sfxSource.PlayOneShot(attackClip[Random.Range(0, attackClip.Count())]);
+    }
+
+    public void PlayDeathSFX()
+    {
+        sfxSource.PlayOneShot(deathClip);
     }
 
     public void SetCursor1()
