@@ -39,6 +39,7 @@ public class RectangleSpawner : MonoBehaviour
 
     public void SpawnLogo(int indexToSpawn, Vector2 spawnPoint, bool hasHitFirstBorder)
     {
+
         // Instantiate the logo prefab
         GameObject logo = Instantiate(logoPrefabs[indexToSpawn], spawnPoint, Quaternion.identity, this.transform);
 
@@ -57,6 +58,7 @@ public class RectangleSpawner : MonoBehaviour
             logoMovement.audioManager = audioManager;
         }
     }
+
 
     public Vector2 GetRandomPointOnPerimeter()
     {

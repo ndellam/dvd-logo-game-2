@@ -35,6 +35,10 @@ public class PlayerGameplayController : MonoBehaviour
 
     public AudioManager audioManager;
 
+    public GameObject soulObject;
+
+    public RotateToFaceMouse abdomenRotate;
+
     // Boolean to track if the player is currently in the hit state
     private bool isHit, isDying;
 
@@ -79,6 +83,8 @@ public class PlayerGameplayController : MonoBehaviour
         }
         else
         {
+            abdomenController.ChangeSprite(health - 1);
+
             EndGame();
         }
     }
@@ -137,6 +143,7 @@ public class PlayerGameplayController : MonoBehaviour
 
     void EndGame()
     {
+        abdomenRotate.canRotate = false;
         isDying = true;
         uiManager.canAddScore = false;
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
@@ -192,5 +199,13 @@ public class PlayerGameplayController : MonoBehaviour
         //cursorRenderer.color = color;
         cursorRenderer.sprite = cursor3;
 
+    }
+
+    public void SpawnSoul()
+    {
+        if (soulObject != null)
+        {
+            Instantiate(soulObject, this.transform);
+        }
     }
 }

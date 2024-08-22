@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 viewportPosition = Camera.main.WorldToViewportPoint(cursor.position);
 
         // Clamp the viewport position to keep the object within the view
-        viewportPosition.x = Mathf.Clamp(viewportPosition.x, 0.035f, 0.965f);
-        viewportPosition.y = Mathf.Clamp(viewportPosition.y, 0.05f, 0.95f);
+        viewportPosition.x = Mathf.Clamp(viewportPosition.x, 0f, 1f);
+        viewportPosition.y = Mathf.Clamp(viewportPosition.y, 0f, 1f);
 
         // Convert the clamped viewport position back to world space
         Vector3 clampedWorldPosition = Camera.main.ViewportToWorldPoint(viewportPosition);
